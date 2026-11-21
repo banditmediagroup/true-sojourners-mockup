@@ -327,9 +327,6 @@
       <div class="header-text">
         <p class="eyebrow">Design concepts &mdash; November 2026</p>
         <h1 class="page-title">Homepage Review</h1>
-        <div class="header-sub">
-          <span>Three directions for consideration</span>
-        </div>
       </div>
     </header>
 
@@ -436,6 +433,12 @@
 
         const STEPS = 120;
 
+        // Clip all grid lines to the globe circle
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.clip();
+
         // Latitude rings
         const lats = [-75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75];
         for (const lat of lats) {
@@ -463,7 +466,9 @@
           drawLine(back,  0.04);
         }
 
-        // Outer circle
+        ctx.restore();
+
+        // Outer circle (drawn outside clip so stroke isn't half-clipped)
         ctx.beginPath();
         ctx.arc(cx, cy, R, 0, Math.PI * 2);
         ctx.strokeStyle = 'rgba(155, 196, 138, 0.22)';
