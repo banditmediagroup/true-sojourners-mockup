@@ -267,38 +267,12 @@
       flex-shrink: 0;
     }
 
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 32px 0 48px;
-      margin-top: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-left {
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: var(--cream-muted);
-    }
-
-    .footer-right {
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(155, 196, 138, 0.25);
-    }
 
     /* ── Responsive ── */
     @media (max-width: 720px) {
       .cards { grid-template-columns: 1fr; background: none; }
       .card { border-bottom: 1px solid var(--rule); }
       .card:last-child { border-bottom: none; }
-      footer { flex-direction: column; align-items: flex-start; gap: 8px; }
       #globe-canvas { width: 500px; height: 500px; }
     }
 
@@ -379,10 +353,6 @@
 
     </div>
 
-    <footer>
-      <span class="footer-left">True Sojourners &mdash; Homepage Design Review</span>
-      <span class="footer-right">Bandit Media Group</span>
-    </footer>
 
   </div>
 
